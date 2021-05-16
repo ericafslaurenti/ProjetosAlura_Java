@@ -1,0 +1,11 @@
+
+public class TestaMetodo {
+	
+	public static void main(String[] args) {
+		Conta contaDoPaulo = new Conta();//p/ invocar o metodo deposita, temos q referenciar uma conta contaDoPaulo
+		contaDoPaulo.saldo = 100;//é comum o nome de uma variável ser igual ao da classe, sendo que a variável por convenção é escrita com letra minúscula.
+		contaDoPaulo.deposita(50);//p/ invocar o método deposita() usamos o caracter . seguido de (), q contem o valor q queremos depositar
+		System.out.println(contaDoPaulo.saldo);
+	}
+
+}

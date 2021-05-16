@@ -1,0 +1,22 @@
+
+public class TestaMetodo {
+	
+	public static void main(String[] args) {
+		Conta contaDoPaulo = new Conta();//p/ invocar o metodo deposita, temos q referenciar uma conta contaDoPaulo
+		contaDoPaulo.saldo = 100;//na invocação de um atributo, sempre usa o sinal de =
+		contaDoPaulo.deposita(50);//p/ invocar o método deposita() usamos o caracter . seguido de (), q contem o valor q queremos depositar
+		System.out.println(contaDoPaulo.saldo);
+		
+		boolean conseguiuRetirar = contaDoPaulo.saca(20); //o valor é guardado dentro da variável boolean conseguiuRetirar, que guarda true ou false
+		System.out.println(contaDoPaulo.saldo);
+		System.out.println(conseguiuRetirar);
+		
+		Conta contaDaMarcela = new Conta(); //criei uma conta nova e fiz uma fechinha pra conta da Marcela
+		contaDaMarcela.deposita(1000);
+		
+		contaDaMarcela.transfere(300, contaDoPaulo); //conta origem é a da Marcela (esquerda) é a referência this (no arquivo Conta.java), a conta destino é a referência (contaDoPaulo)
+		System.out.println(contaDaMarcela.saldo);
+		System.out.println(contaDoPaulo.saldo);
+	}
+
+}

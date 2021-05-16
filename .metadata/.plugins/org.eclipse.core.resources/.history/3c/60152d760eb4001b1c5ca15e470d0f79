@@ -1,0 +1,15 @@
+
+public class ControleBonificacao {
+	//atributo para guardar a bonificacao
+	private double soma;
+	
+	public void registra(Gerente g) {
+		double boni = g.getBonificacao();
+		this.soma = this.soma + boni;//(a somo é = a soma atual) + (bonificacao que o gerente passou)
+	}
+		
+	public double getSoma() {
+		return soma;
+	}
+
+}

@@ -1,0 +1,19 @@
+//FuncionarioAutenticavel é uma classe intermediaria para aumentar a hierarquia
+public abstract class Autenticavel {
+
+	private int senha;//atributos
+	
+	public void setSenha(int senha) {
+		this.senha = senha;
+	}
+	
+	public boolean autentica(int senha) {
+		if(this.senha == senha) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+}
+//classes abstratas não são obrigadas a implementar

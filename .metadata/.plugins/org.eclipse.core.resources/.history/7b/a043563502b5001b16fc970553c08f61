@@ -1,0 +1,10 @@
+//Gerente é um Funcionario ou Gerente herda da class Funcionario
+public class Gerente extends Funcionario {
+	
+	//metodo que cria a bonificação dos funcionários
+	public double getBonificacao() {
+		System.out.println("Chamando o método de bonificacao do GERENTE");
+		return super.getSalario(); //super: palavra chave q busca o atributo na super class. Significa q esse atributo n está definido nessa classe
+	}//se a bonificação mudar na classe funcionario, automaticamente muda nessa também
+	
+}

@@ -1,0 +1,15 @@
+
+public class TesteReferencias {
+	
+	public static void main(String[] args) {
+		Conta primeiraConta = new Conta();
+		primeiraConta.saldo = 300;
+		System.out.println("saldo da primeira: " + primeiraConta.saldo);
+		
+		Conta segundaConta = primeiraConta; //temos 2 referências para o mesmo objeto
+		System.out.println("saldo da segunda conta: " + segundaConta.saldo);
+		 
+	}
+	
+
+}

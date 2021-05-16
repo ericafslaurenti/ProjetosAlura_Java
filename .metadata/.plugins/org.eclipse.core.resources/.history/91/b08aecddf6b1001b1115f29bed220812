@@ -1,0 +1,26 @@
+
+public class TesteReferencias {
+	
+	public static void main(String[] args) {
+		Conta primeiraConta = new Conta();
+		primeiraConta.saldo = 300;
+		System.out.println("saldo da primeira: " + primeiraConta.saldo);
+		
+		Conta segundaConta = primeiraConta; //temos 2 referências para o mesmo objeto e eu só tenho 1 new Conta()
+		System.out.println("saldo da segunda conta: " + segundaConta.saldo);
+		
+		segundaConta.saldo += 100;
+		System.out.println("saldo da segunda conta: " + segundaConta.saldo);
+		
+		System.out.println(primeiraConta.saldo);
+		
+		if(primeiraConta == segundaConta) {//== vai comparar referencia e n o objeto
+			System.out.println("são a mesmíssima conta");
+		}
+		
+		System.out.println(primeiraConta);
+		 
+	}
+	
+
+}

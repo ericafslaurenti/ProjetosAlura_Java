@@ -1,0 +1,13 @@
+
+public class TestaValores {
+	public static void main(String[] args) {
+		Conta conta = new Conta();
+		
+		//neste ponto a conta está inconsistente com a regra de negócio
+		conta.setAgencia(-50);
+		conta.setNumero(-330);
+		
+		System.out.println(conta.getAgencia());
+	}
+
+}

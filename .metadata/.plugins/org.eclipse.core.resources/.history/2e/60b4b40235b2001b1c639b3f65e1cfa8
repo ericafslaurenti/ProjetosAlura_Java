@@ -1,0 +1,13 @@
+
+public class TestaMetodo {
+	
+	public static void main(String[] args) {
+		Conta contaDoPaulo = new Conta();//p/ invocar o metodo deposita, temos q referenciar uma conta contaDoPaulo
+		contaDoPaulo.saldo = 100;//na invocação de um atributo, sempre usa o sinal de =
+		contaDoPaulo.deposita(50);//p/ invocar o método deposita() usamos o caracter . seguido de (), q contem o valor q queremos depositar
+		System.out.println(contaDoPaulo.saldo);
+		contaDoPaulo.saca(20);
+		System.out.println(contaDoPaulo.saldo);
+	}
+
+}

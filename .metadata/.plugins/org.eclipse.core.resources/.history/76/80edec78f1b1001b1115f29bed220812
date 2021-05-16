@@ -1,0 +1,20 @@
+
+public class CriaConta {
+	
+	public static void main(String[] args) {
+		Conta primeiraConta = new Conta();//preciso declarar de qual variável é, conta ref a 1ª conta
+		primeiraConta.saldo = 200; //.saldo vai buscar dentro do objeto o atributo de nome saldo
+		System.out.println(primeiraConta.saldo);
+		
+		primeiraConta.saldo += 100;
+		System.out.println(primeiraConta.saldo);
+		
+		Conta segundaConta = new Conta(); //new Conta() é um endereço de memória q ele guardou e eu quero guardar isso dentro de uma referência q se chama 2ª conta
+		segundaConta.saldo = 50;
+		
+		System.out.println("A primeira conta tem " + primeiraConta.saldo);
+		System.out.println("A segunda conta tem " + segundaConta.saldo);
+	}
+	
+
+}

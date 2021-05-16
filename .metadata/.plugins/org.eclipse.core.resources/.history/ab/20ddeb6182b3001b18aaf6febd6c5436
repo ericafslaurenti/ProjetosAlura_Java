@@ -1,0 +1,23 @@
+//Gerente é um Funcionario ou Gerente herda da class Funcionario
+public class Gerente extends Funcionario {
+	
+	private int senha;//atributos
+	
+	public void setSenha(int senha) {
+		this.senha = senha;
+	}
+	
+	public boolean autentica(int senha) {
+		if(this.senha == senha) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+		
+	//metodo que cria a bonificação dos funcionários
+//	public double getBonificacao() {
+//		return this.salario //retorna bonificação de 1 salário
+//	}
+	
+}

@@ -1,0 +1,13 @@
+
+public class TestaValores {
+	public static void main(String[] args) {
+		Conta conta = new Conta(1337, 24226);//esse () está sempre passando por um construtor. Ele n é um método pq n tem retorno
+		
+		//neste ponto a conta está inconsistente com a regra de negócio
+		conta.setAgencia(-50);
+		conta.setNumero(-330);
+		
+		System.out.println(conta.getAgencia());
+	}
+
+}
