@@ -1,5 +1,7 @@
 package br.com.bytebank.banco.modelo;
 
+import java.io.Serializable;
+
 /**
  * Classe representa a abertura de uma conta
  *  
@@ -9,12 +11,12 @@ package br.com.bytebank.banco.modelo;
 //private: a partir do momento que um atributo é privado, ele n pode ser lido, modificado por ninguém a n ser a própria classe
 //protected: deixa público apenas para os filhos
 
-public abstract class Conta {
+public abstract class Conta extends Object implements Comparable<Conta>,Serializable {
 	
 	protected double saldo; //é público para os filhos
 	private int agencia;
 	private int numero;
-	private Cliente titular; // o tipo titular deixa de ser uma String e passa a ser tipo cliente. o lado esq precisar ser o nome da variável 
+	private transient Cliente titular; // o tipo titular deixa de ser uma String e passa a ser tipo cliente. o lado esq precisar ser o nome da variável 
 	private static int total = 0;
 	
 	//construtor padrão
@@ -103,8 +105,28 @@ public abstract class Conta {
 	}
 	
 	@Override
+	public boolean equals(Object ref) {
+		
+		Conta outra = (Conta) ref;
+		
+		if (this.agencia != outra.agencia) {
+			return false;
+		}
+		if(this.numero != outra.numero) {
+			return false;
+		}
+		return true;
+	}
+	
+	@Override
+	public int compareTo(Conta outra) {
+		
+		return Double.compare(this.saldo, outra.saldo);
+	}
+	
+	@Override
 	public String toString() {
-		return "Numero: " + this.numero + ", Agencia: " + this.agencia;
+		return "Numero: " + this.numero + ", Agencia: " + this.agencia + ", Saldo: " + this.saldo;
 	}
 
 
@@ -114,3 +136,6 @@ public abstract class Conta {
 //void Depois de depositar um valor na conta bancária, poderemos receber uma msg, nº ou comprovante. Nesse caso, como não existe qualquer tipo de retorno ao acionarmos um método, utilizamos a palavra-chave void.
 //void deposita é q ele recebe - (double valor)é o q ele devolve
 //this.saldo = this.saldo + valor; é o mesmo que: this.saldo += valor; soma o valor a ele mesmo, assim como o -= tira o valor dele mesmo
+//linha 105 - ref TesteArrayListEquals
+
+//transient se vc grava uma conta, o cliente n sera gravado no objeto
